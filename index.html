@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Future Value Finacial Work</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style type="text/css">
+aside{
+    margin-top: 30px;
+    -webkit-box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);
+-moz-box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);
+box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);}
+aside .content-footer>img {
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+    margin-right: 10px;
+    border: 2px solid #fff;
+}
+
+.user-ditels {
+    width: 300px;
+    top: -100px;
+    height: 100px;
+    padding-bottom: 99px;
+    position: absolute;
+    border: solid 2px #fff;
+    background-color: #34495E;
+    right: 25px;
+    display: none;
+    z-index: 1;
+}
+
+@media (max-width:768px){
+    .user-ditels {
+    right: 5px;
+}
+
+}
+.user-small-img{cursor: pointer;}
+
+.content-footer:hover .user-ditels  {
+    display: block;
+}
+
+
+.content-footer .user-ditels .user-img{width: 100px;height:100px;float: left;}
+.user-full-ditels h3 {
+    color: #fff;
+    display: block;
+    margin: 0px;
+    padding-top: 10px;
+    padding-right: 28px;
+    text-align: right;
+}
+.user-full-ditels p{
+    color: #fff;
+    display: block;
+    margin: 0px;
+     padding-right: 20px;
+    padding-top: 5px;
+   text-align: right;}
+.social-icon {
+    background-color: #fff;
+    margin-top: 10px;
+    padding-right: 20px;
+    text-align: right;
+}
+.social-icon>a{font-size:20px;text-decoration:none;padding: 5px;}
+.social-icon a:nth-of-type(1){color:#4E71A8;}
+.social-icon a:nth-of-type(2){color:#3FA1DA;}
+.social-icon a:nth-of-type(3){color:#E3411F;}
+.social-icon a:nth-of-type(4){color:#CA3737;}
+.social-icon a:nth-of-type(5){color:#3A3A3A;}
+
+
+/*recent-post-col////////////////////*/
+.widget-sidebar {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.title-widget-sidebar {
+    font-size: 14pt;
+    border-bottom: 2px solid #e5ebef;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+}
+
+.title-widget-sidebar:after {
+    border-bottom: 2px solid #f1c40f;
+    width: 150px;
+    display: block;
+    position: absolute;
+    content: '';
+    padding-bottom: 10px;
+}
+
+.recent-post{width: 100%;height: 80px;list-style-type: none;}
+.post-img img {
+    width: 100px;
+    height: 70px;
+    float: left;
+    margin-right: 15px;
+    border: 5px solid #16A085;
+    transition: 0.5s;
+}
+
+.recent-post a {text-decoration: none;color:#34495E;transition: 0.5s;}
+.post-img, .recent-post a:hover{color:#F39C12;}
+.post-img img:hover{border: 5px solid #F39C12;}
+
+/*===============ARCHIVES////////////////////////////*/
+
+
+
+button.accordion {
+    background-color: #16A085;
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #F39C12;color: #fff;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #fff;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+
+/*categories//////////////////////*/
+
+.categories-btn{
+    background-color: #F39C12;
+    margin-top:30px;
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+
+}
+.categories-btn:after {
+    content: '\25BA';
+    color: #fff;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.categories-btn:hover {
+    background-color: #16A085;color: #fff;
+}
+
+.form-control{border-radius: 0px;}
+
+.btn-warning {
+    border-radius: 0px;
+    background-color: #F39C12;
+    margin-top: 15px;
+}
+.input-group-addon{border-radius: 0px;}
+</style>
+
+<!-- Place favicon.ico in the root directory -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,600,700,900" rel="stylesheet">
+<link rel="stylesheet" href="css/laapp.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md main-nav navigation fixed-top sidebar-left">
+<div class="container">
+<button class="navbar-toggler" type="button">
+<span class="icon-bar"></span>
+ <span class="icon-bar"></span> 
+ <span class="icon-bar"></span>
+ </button> 
+ <a href="#main" class="navbar-brand">
+ <img src="img/logo.png" alt="Laapp" >
+
+ </a>
+ <div class="collapse navbar-collapse" id="main-navbar">
+ <div class="sidebar-brand">
+ <a href="index.html">
+ <img src="img/logo.png" alt="Laapp Template" class="logo">
+ </a>
+ </div>
+ <ul class="nav navbar-nav ml-auto">
+ <li class="nav-item">
+ <a class="nav-link scrollto" href="#home">Home</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link scrollto" href="#about">About</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link scrollto" href="#Service">Service</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link scrollto" href="#pricing">Premimum NRI</a>
+ </li>
+   <li class="nav-item">
+ <a class="nav-link scrollto" href="#">Tax Budget 2020</a>
+ </li>
+  <li class="nav-item">
+ <a class="nav-link scrollto" href="#blog">Blog</a>
+ </li>
+ <li class="nav-item">
+ <a class="nav-link scrollto" href="#trial">Contact</a>
+ </li>
+ </ul>
+ </div>
+ </div>
+ </nav>
+ <main class="overflow-hidden position-relative">
+ <!-- Alternative 3 Heading -->
+ <header class="header alter3-header section gradient gradient-primary-auxiliary text-contrast" id="home">
+ <div class="shapes-container">
+ <div class="animation-shape shape-ring animation--rotating-diagonal">
+ <div>
+ </div>
+ </div>
+ <div class="animation-shape shape-circle animation--clockwise">
+ <div>
+ </div>
+ </div>
+ <div class="animation-shape shape-triangle animation--anti-clockwise">
+ <div class="animation--rotating">
+ </div>
+ </div>
+ <div class="animation-shape shape-diamond animation--anti-clockwise">
+ <div class="animation--rotating">
+ </div>
+ </div>
+ <div class="static-shape shape-ring-1">
+ </div>
+ <div class="static-shape shape-ring-2">
+ </div>
+ <div class="static-shape shape-circle-1">
+ </div>
+ <div class="static-shape pattern-dots-1">
+ </div>
+ <div class="static-shape pattern-dots-2">
+ </div>
+ <div class="static-shape ghost-shape ghost-shape-1">
+ </div>
+ </div>
+ <div class="container bring-to-front">
+ <div class="row">
+  <div class="col-md-6">
+ <h1 class="extra-bold display-md-3 font-md">Future Value Finacial Work
+  <!-- <span class="d-block display-md-4 light">to showcase your app</span> -->
+ </h1>
+ <p class="lead">Get Expert Financial Advice. Become Wealthy The Right Way. Meet ARTHOS™ : Your Robo-Assistant for Managing Money</p>
+ <nav class="nav mt-5">
+ <a href="#" class="nav-link mr-3 btn btn btn-rounded btn-contrast">
+ <i class="fas fa-tag mr-3"></i> Plans & pricing </a>
+ <a href="#" class="nav-link btn btn-rounded btn-outline-contrast">Start now</a>
+ </nav>
+ </div>
+ </div>
+ </div>
+ </header>
+ 
+ <!-- Isometric Mockups -->
+ <section class="isometric-mockups">
+ <div class="tablet ipad landscape">
+ <div class="screen">
+ <img src="img/screens/tablet/1.png" alt="...">
+ </div>
+ <div class="button"></div>
+ </div>
+ <div class="iphone light phone-big">
+ <div class="screen">
+ <img src="img/screens/app/4.png" alt="...">
+ </div>
+ <div class="notch">
+ </div>
+ </div>
+ <div class="iphone light phone-small">
+ <div class="screen">
+ <img src="img/screens/app/2.png" alt="...">
+ </div>
+ <div class="notch">
+ </div>
+ </div>
+ <div class="tablet ipad portrait">
+ <div class="screen">
+ <img src="img/screens/tablet/2.png" alt="...">
+ </div>
+ <div class="button">
+ </div>
+ </div>
+ </section>
+ 
+ <!-- Partners -->
+ <section class="section alter3-partners bg-contrast edge top-left" id="about">
+ <div class="container bring-to-front pb-md-9">
+ <div class="row">
+ <div class="col-md-6">
+ <div class="section-heading">
+ <i class="fas fa-handshake fa-3x accent mb-3"></i>
+ <h3 class="text-alternate heading-line">Leave Your Financial Decisions To Us</h3>
+ <p class="lead">In life, making those decisions on your investments or insurance or expenses are scary and yet, unavoidable. An average Indian loses at least INR 1 Crore by making the wrong financial decisions during their lifetime.
+This is where we come in to take care of your financial decisions so that you can live a life that you always wanted.</p>
+ </div>
+ <a href="#!" class="more-link btn btn-outline-primary bold">Learn more</a>
+ </div>
+ </div>
+ </div>
+ </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Powerful Service -->
+ <section class="section alter3-Service" id="Service">
+ <div class="shapes-container">
+ <div class="shape shape-ring shape-ring-1">
+ <div class="animation animation--rotating">
+ </div>
+ </div>
+ <div class="shape shape-ring shape-ring-2">
+ <div class="animation animation--rotating">
+ </div>
+ </div>
+ <div class="shape shape-circle animation--clockwise">
+ <div>
+ </div>
+ </div>
+ <div class="shape background-shape-main">
+ </div>
+ </div>
+ <div class="container">
+ <div class="row align-items-center">
+ <div class="col-lg-5 order-lg-last">
+ <div class="section-heading">
+ <p class="px-2 text-alternate text-uppercase bold">Powerful features await for you</p>
+ <h2 class="heading-line">A complete feature stack ready to help you</h2>
+ <p class="lead text-muted my-4 semi-bold">Why Do Our Users Love Us?</p>
+  <p>Despite our sophisticated technology, we are simple to use and avoid using confusing or complex language.</p>
+  <p>Get your financial planning, execution and tracking done entirely online! Say goodbye to office visits.</p>
+  <p>Every query regarding your finances will be answered, no matter how silly or complicated!</p>
+  <p>We provide great support to our users at every step of their journey with us. Think money, Think Future Value Finacial Work!</p>
+ </p>
+ <a href="#" class="more-link btn btn-primary text-contrast bold">Know More</a>
+ </div>
+ 
+ </div>
+ <div class="col-lg-7 pr-lg-6">
+ <div class="row">
+ <div class="col-lg-6 rotated-cards">
+ <div data-aos="fade-down" data-aos-delay="0">
+ <div class="card border-0 shadow mb-5 tilt">
+ <div class="card-body py-5 px-4">
+ <div class="icon-box rounded-circle gradient gradient-primary-light text-contrast shadow icon-xl mb-3">
+ <i class="icon m-0 pe pe-7s-paint-bucket pe-3x">
+ </i>
+ </div>
+ <h4 class="bold mb-5">1. Plan</h4>
+ <p class="text-muted lead">Get customized advice across investments, goals, expenses, insurance, loans, estate planning, and taxes</p>
+ </div>
+ </div>
+ </div>
+ <div data-aos="fade-down" data-aos-delay="500">
+ <div class="card border-0 shadow mb-5 tilt">
+ <div class="card-body py-5 px-4">
+ <div class="icon-box rounded-circle gradient gradient-primary-light text-contrast shadow icon-xl mb-3">
+ <i class="icon m-0 pe pe-7s-diamond pe-3x">
+ </i>
+ </div>
+ <h4 class="bold mb-5">3. Manage</h4>
+ <p class="text-muted lead">Track your journey and review/rebalance your investments to make sure they are aligned with your goals</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-6 rotated-cards">
+ <div data-aos="fade-down" data-aos-delay="800">
+ <div class="card border-0 shadow mb-5 tilt">
+ <div class="card-body py-5 px-4">
+ <div class="icon-box rounded-circle gradient gradient-primary-light text-contrast shadow icon-xl mb-3">
+ <i class="icon m-0 pe pe-7s-light pe-3x">
+ </i>
+ </div>
+ <h4 class="bold mb-5">2. Execute</h4>
+ <p class="text-muted lead">Implement your customized advice by buying all the recommended financial products on one single platform</p>
+ </div>
+ </div>
+ </div>
+ <div data-aos="fade-down" data-aos-delay="1200"><div class="card border-0 shadow mb-5 tilt">
+ <div class="card-body py-5 px-4"><div class="icon-box rounded-circle gradient gradient-primary-light text-contrast shadow icon-xl mb-3">
+ <i class="icon m-0 pe pe-7s-cash pe-3x"></i>
+ </div>
+ <h4 class="bold mb-5">4. Review</h4>
+ <p class="text-muted lead">Go through 6-monthly reviews of your financial plan to ensure your recommendations accommodate the changes in your life.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+ 
+ <!-- Powered Design Blocks -->
+ <section class="section powered-design" id="product">
+ <div class="shapes-container">
+ <div class="shape shape-circle shape-circle-1">
+ <div data-aos="fade-up-left" data-aos-duration="1500">
+ </div>
+ </div>
+ <div class="shape shape-circle shape-circle-2">
+ <div data-aos="fade-up-left" data-aos-duration="1200" data-aos-delay="500">
+ </div>
+ </div>
+ <div class="shape shape-ring animation--rotating-diagonal">
+ <div>
+ </div>
+ </div>
+ <div class="shape shape-triangle shape-animated">
+ <div class="animation--rotating">
+ </div>
+ </div>
+ <div class="shape pattern-dots-1">
+ </div>
+ </div>
+
+
+
+ </section>
+
+
+<section>
+<section class="section alter3-blog" id="blog">
+	<div class="container" style="background-color: white;">
+		<br><br>
+		<div class="row" style="padding: 30px;">
+			<div class="col-md-6">
+				<h5 class="text-justify">RECENT POST </h5>
+				<img src="img/parallax/COVID-19-insurance-cover.jpg" class="img-responsive">
+				<p class="text-justify">June 10, 2020</p>
+				<h4 class="text-justify">Would it be advisable for you to get yourself a COVID-19 insurance cover?</h4>
+			</div>
+			<div class="col-md-6">
+
+			<div class="widget-sidebar">
+                 <h2 class="title-widget-sidebar">FINANCIAL PLANNING</h2>
+                   <div class="content-widget-sidebar">
+                    <ul>
+                     <li class="recent-post">
+                        <div class="post-img">
+                         <img src="img/parallax/COVID-19-insurance-cover-450x231.jpg" class="img-responsive">
+                         </div>
+                         <a href="#"><h5>Excepteur sint occaecat cupi non proident laborum.</h5></a>
+                         <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
+                        </li>
+                        <hr>
+
+                        <li class="recent-post">
+                        <div class="post-img">
+                         <img src="img/parallax/how-to-choose-a-cancer-plan_1-450x231.jpg" class="img-responsive">
+                         </div>
+                         <a href="#"><h5>Excepteur sint occaecat cupi non proident laborum.</h5></a>
+                         <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
+                        </li>
+                        <hr>
+
+                        <li class="recent-post">
+                        <div class="post-img">
+                         <img src="img/parallax/Online-Trading-Portal-Page-Banner-LoginPage.jpg" class="img-responsive">
+                         </div>
+                         <a href="#"><h5>Excepteur sint occaecat cupi non proident laborum.</h5></a>
+                         <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
+                        </li>
+                        <hr>
+                    </ul>
+                   </div>
+                 </div>
+</div>
+		</div>
+	</div>
+</section>
+
+
+ </section>
+ 
+
+
+
+
+</section>
+
+ 
+ <!-- Why Choose Us -->
+ <section class="section why-choose-us">
+ <div class="shapes-container">
+ <div class="pattern pattern-dots"></div>
+ </div>
+ <div class="container pb-8 bring-to-front">
+ <div class="section-heading text-center">
+ <h2 class="heading-line">Why you should choose Laap?</h2>
+ <p class="text-muted lead mx-auto">Our values allows us to serve our clients to the best of our abilities. FVFW (Future Value Finacial Work) INDIA is built on serving and satisfying our clients. Meeting our clients’ needs is and always has been our Number 1 priority. We make a positive difference in our clients’ lives. When we execute with excellence, success naturally follows. FVFW (Future Value Finacial Work) provides world-class service and is personally accountable for delivering results.</p>
+ </div>
+ <div class="row gap-y">
+ <div class="col-md-6">
+ <h4 class="bold text-alternate">Your Current Financial Advisors May Never Make You Wealthy</h4>
+ <p class="text-muted lead mb-5">Get Expert Financial Advice. Become Wealthy The Right Way.</p>
+ <ul class="list-unstyled why-icon-list"><li class="list-item"><div class="media align-items-center"><div class="icon-shape mr-3"><div class="shape shape-pipes">
+ </div>
+ <i class="icon text-alternate fas fa-plug fa-3x"></i>
+ </div>
+ <div class="media-body">
+ 
+ <p class="my-0">90% of Indians fall into the trap of buying financial products such as Insurance from an agent, who is only trying to maximise his commissions.</p>
+ </div>
+ </div>
+ </li>
+ <li class="list-item">
+ <div class="media align-items-center">
+ <div class="icon-shape mr-3">
+ <div class="shape shape-pipes"></div>
+ <i class="icon text-alternate fas fa-heart fa-3x"></i>
+ </div>
+ <div class="media-body">
+  
+ <p class="my-0">85% of the users admit that following advicce from friends has not improved their financial lives .</p>
+ </div>
+ </div>
+ </li>
+ <li class="list-item">
+ <div class="media align-items-center">
+ <div class="icon-shape mr-3"><div class="shape shape-pipes">
+ </div>
+ <i class="icon text-alternate fas fa-headphones fa-3x"></i>
+ </div>
+ <div class="media-body">
+  
+ <p class="my-0">It has become a trend to buy mutual funds purely based on ratings and returns. In reality, funds that suit your friend may not suit you. </p>
+ </div>
+ </div>
+ </li>
+ </ul>
+ <hr class="my-5">
+ <div class="text-center text-md-left">
+ <a href="#!" class="btn btn-primary text-contrast">Know More</a>
+ </div>
+ </div>
+ <div class="col-md-6">
+ <div class="rotated-mockups device-twin">
+ <div class="browser absolute shadow-lg"><img src="img/screens/tablet/1.png" alt="...">
+ </div>
+ <div class="front iphone light">
+ <div class="screen">
+ <img src="img/screens/app/1.png" alt="..."></div>
+ <div class="notch">
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+ 
+ <!-- FAQs -->
+ <section class="section faqs-dd bg-light edge top-left">
+ <div class="shapes-container">
+ <div class="absolute icon" data-aos="fade-down-left">
+ <i class="fas fa-question">
+ </i>
+ </div>
+ </div>
+ <div class="container">
+ <div class="section-heading text-center">
+ <h2 class="heading-line">Frequently Asked Questions</h2>
+ <p class="lead">Want to know more about our services?</p>
+ </div>
+ <div class="row">
+ <div class="col-lg-8 mx-lg-auto">
+ <div data-aos="fade-up">
+ <div class="card shadow-box shadow-hover mb-3">
+ <div class="card-header py-3">
+ <a href="#" class="card-title collapsed" data-toggle="collapse" data-target="#v1-q1">What does the package include?</a>
+ </div>
+ <div id="v1-q1" class="collapse card-body">When you buy Dashcore, you get all you see in the demo but the images. We include SASS files for styling, complete JS files with comments, all HTML variations. Besides we include all mobile PSD mockups.
+ </div>
+ </div>
+ </div>
+ <div data-aos="fade-up">
+ <div class="card shadow-box shadow-hover mb-3">
+ <div class="card-header py-3">
+ <a href="#" class="card-title collapsed" data-toggle="collapse" data-target="#v1-q2">What is the typical response time for a support question?</a>
+ </div>
+ <div id="v1-q2" class="collapse card-body">Since you report us a support question we try to make our best to find out what is going on, depending on the case it could take more or les time, however a standard time could be minutes or hours.
+ </div>
+ </div>
+ </div>
+ <div data-aos="fade-up">
+ <div class="card shadow-box shadow-hover mb-3">
+ <div class="card-header py-3">
+ <a href="#" class="card-title collapsed" data-toggle="collapse" data-target="#v1-q3">What do I need to know to customize this template?</a>
+ </div>
+ <div id="v1-q3" class="collapse card-body">Our documentation give you all you need to customize your copy. However you will need some basic web design knowledge (HTML, Javascript and CSS)</div>
+ </div>
+ </div>
+ <div data-aos="fade-up">
+ <div class="card shadow-box shadow-hover mb-3">
+ <div class="card-header py-3">
+ <a href="#" class="card-title collapsed" data-toggle="collapse" data-target="#v1-q4">Can I suggest a new feature?</a>
+ </div>
+ <div id="v1-q4" class="collapse card-body">Definitely <span class="bold">Yes</span>, you can contact us to let us know your needs. If your suggestion represents any value to both we can include it as a part of the theme or you can request a custom build by an extra cost. Please note it could take some time in order for the feature to be implemented.</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+ 
+
+ 
+<!-- Contact Channels -->
+<section class="section">
+<div class="container bring-to-front">
+<div class="row gap-y">
+<div class="col-md-6">
+<div class="rounded media bg-contrast shadow-lg p-4">
+<div class="icon-shape mr-4"><i class="pe pe-7s-cash pe-3x">
+</i>
+</div>
+<div class="media-body">
+<h4 class="text-primary">Contact Sales</h4>
+<a href="https://5studios.net/cdn-cgi/l/email-protection#493a3c3939263b3d097c3a3d3c2d20263a67272c3d" class="more-link d-flex align-items-center mt-0">
+<span class="__cf_email__" data-cfemail="6516040900162550161110010c0a164b0b0011">[email&#160;protected]</span>
+</a>
+<p class="mt-4">Looking for a custom quote? Need to tell us more about your project? Want a demonstration? Drop us a line</p>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="rounded media bg-contrast shadow-lg p-4">
+<div class="icon-shape mr-4">
+<i class="pe pe-7s-help2 pe-3x"></i>
+</div>
+<div class="media-body">
+<h4 class="text-primary">Technical Support</h4>
+<a href="https://5studios.net/cdn-cgi/l/email-protection#17646267677865635722646362737e786439797263" class="more-link d-flex align-items-center mt-0">
+<span class="__cf_email__" data-cfemail="90e3e5e0e0ffe2e4d0a5e3e4e5f4f9ffe3befef5e4">[email&#160;protected]</span>
+</a>
+<p class="mt-4">Any question about how to integrate your product?. Don't fret, our geek team is ready for you.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer section bg-dark text-contrast edge top-left">
+<div class="container py-3">
+<div class="row gap-y text-center text-md-left">
+<div class="col-md-4 mr-auto">
+<img src="img/logo.png" alt="" class="logo">
+<p>We at FVFW (Future Value Finacial Work) are passionate about helping people organize their wealth to achieve the best possible outcomes by distributing their income and savings in the most efficient way so that their financial goals are met while allowing them to get on with living! We are FVFW (Future Value Finacial Work) </p>
+</div>
+<div class="col-md-2">
+<nav class="nav flex-column">
+<a class="nav-item py-2 text-contrast" href="#">About</a>
+<a class="nav-item py-2 text-contrast" href="#">Services</a>
+ <a class="nav-item py-2 text-contrast" href="#">Blog</a>
+ </nav>
+ </div>
+ <div class="col-md-2">
+ <nav class="nav flex-column">
+ <a class="nav-item py-2 text-contrast" href="#">Features</a> 
+ <a class="nav-item py-2 text-contrast" href="#">API</a> 
+ <a class="nav-item py-2 text-contrast" href="#">Customers</a>
+ </nav>
+ </div>
+ <div class="col-md-2">
+ <nav class="nav flex-column">
+ <a class="nav-item py-2 text-contrast" href="#">Careers</a> 
+ <a class="nav-item py-2 text-contrast" href="#">Contact</a> 
+ <a class="nav-item py-2 text-contrast" href="#">Search</a>
+ </nav>
+ </div>
+ <div class="col-md-2">
+ <h6 class="py-2 small">Follow us</h6>
+ <nav class="nav justify-content-around">
+ <a href="#" target="_blank" class="btn btn-circle btn-sm brand-facebook">
+ <i class="fab fa-facebook">
+ </i>
+ </a>
+ <a href="#" class="btn btn-circle btn-sm brand-twitter">
+ <i class="fab fa-twitter">
+ </i>
+ </a>
+ <a href="#" class="btn btn-circle btn-sm brand-instagram">
+ <i class="fab fa-instagram"></i>
+ </a>
+ </nav>
+ </div>
+ </div>
+ <hr class="mt-5 op-5">
+ <div class="row small">
+ <div class="col-md-4">
+ <p class="mt-2 mb-0 text-center text-md-left">© 2020 <a href="#">5studios</a>. All Rights Reserved</p>
+ </div>
+ </div>
+ </div>
+ </footer>
+ 
+ <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+ <script src="js/laapp.min.js"></script>
+</body>	
+</html>
